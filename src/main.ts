@@ -29,7 +29,7 @@ async function getActivity(){
 
   let actividad:Activity = json;
   if(json.error!=undefined){
-    Swal.fire('No hay actividad','No existe ninguna actividad con los campos que buscas','warning');
+    alert("No hay actividades que cumplan los requisitos");
   }else{
     const urlImagen = `https://api.pexels.com/v1/search?query=${actividad.type}&per_page=2`;
 
@@ -48,11 +48,15 @@ async function getActivity(){
     document.getElementById('tipo')!.innerText= actividad.type;
     document.getElementById('participantes')!.innerText= String(actividad.participants);
     document.getElementById('precio')!.innerText= String(actividad.price);
-    document.getElementById('accesibilidad')!.innerText= String(actividad.activity);
+    document.getElementById('accesibilidad')!.innerText= String(actividad.accessibility);
   }
   
   
 
 }
+
+document.getElementById('peticion')!.addEventListener('click',()=>{
+  getActivity();
+})
 
 getActivity()
