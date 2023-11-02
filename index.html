@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="src/main.ts"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="sweetalert2.all.min.js"></script>
+
+  <title>Document</title>
+</head>
+<body>
+  <div class="flex flex-col justify-around h-screen w-screen bg-[#28794B] m-0">
+    <main class="mt-5 mx-auto lg:w-1/2 bg-[#79B694] rounded-3xl shadow-xl shadow-[#003D1B] md:grid md:grid-cols-2">
+      <div class="m-5 flex justify-center">
+        <img id="imagen" class="border-4 border-[#0F5B30] object-cover rounded-lg" src="https://images.pexels.com/photos/2880507/pexels-photo-2880507.jpeg?auto=compress&cs=tinysrgb&h=350" alt="">
+      </div>
+      <div class="m-5 flex flex-col justify-evenly">
+          <div>
+            <span id="nombre">Go to the library and find an interesting book</span>
+          </div>
+          <div class="flex justify-around">
+            <span>Tipo: <span id="tipo">Relaxation</span></span>
+            <span>Participants: <span id="participantes">1</span></span>
+          </div>
+          <div class="flex justify-around">
+            <span>Price: <span id="precio">0.05</span></span>
+            <span>Accesivility: <span id="accesibilidad">0.2</span></span>
+          </div>
+      </div>
+    </main>
+    <div class=" w-full flex flex-col justify-center">
+      <input class="w-1/2 mx-auto m-2 rounded-full p-2 shadow-xl" type="number" placeholder="Participantes"
+      id="participantesIn" name="participantesIn">
+      <select class="w-1/2 mx-auto m-2 rounded-full p-2 shadow-xl" name="accesibilidadIn" id="accesibilidadIn">
+        <option value="" hidden>Selecciona la accesibilidad de la actividad que buscas</option>
+        <option value="0">Accesibilidad alta</option>
+        <option value="1">Accesibilidad media</option>
+        <option value="2">Accesibilidad baja</option>
+      </select>
+      <select class="w-1/2 mx-auto m-2 rounded-full p-2 shadow-xl" name="priceIn" id="priceIn">
+        <option value="" hidden>Selecciona el precio de la actividad que buscas</option>
+        <option value="0">Precio bajo</option>
+        <option value="1">Precio medio</option>
+        <option value="2">Precio alto</option>
+      </select>
+      <button onclick="getActivity()" class="mt-10 w-1/2 lg:w-1/3 p-3 rounded-3xl bg-[#79B694] shadow-xl shadow-[#003D1B] hover:bg-[#003D1B] hover:shadow-[#79B694] hover:text-white transition-colors mx-auto">Entretenme</button>
+    </div>
+  </div>
+</body>
+</html>
