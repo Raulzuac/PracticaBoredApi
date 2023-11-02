@@ -1,5 +1,6 @@
 import { Activity } from './activity';
 import { Foto } from './foto';
+import Swal from 'sweetalert2';
 
 
 const precios = ['minprice=0&maxprice=0.33','minprice=0.33&maxprice=0.66','minprice=0.66&maxprice=1'];
